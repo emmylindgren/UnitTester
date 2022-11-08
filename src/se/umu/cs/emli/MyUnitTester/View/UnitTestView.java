@@ -9,6 +9,8 @@ import java.awt.event.ActionListener;
 public class UnitTestView {
     private JFrame frame;
     private JButton sendInputButton;
+
+    private JTextField inputText;
     private JButton clearButton;
     private JTextArea outputText;
     private JScrollPane outputTextScroll;
@@ -37,10 +39,8 @@ public class UnitTestView {
                 ,new EmptyBorder(5,5,5,5)));
         inputPanel.setLayout(new BorderLayout(5,5));
 
-        JTextField inputText = new JTextField();
+        inputText = new JTextField();
         sendInputButton = new JButton("Run tests");
-        //TODO: Fix action listener run tests-button
-        //sendInputButton.addActionListener();
 
         inputPanel.add(inputText, BorderLayout.CENTER);
         inputPanel.add(sendInputButton,BorderLayout.LINE_END);
@@ -50,6 +50,7 @@ public class UnitTestView {
 
     private JPanel buildOutPutPanel(){
         JPanel outputPanel = new JPanel();
+        outputText = new JTextArea();
         outputText.setEditable(false);
         outputPanel.setLayout(new BorderLayout());
 
@@ -67,10 +68,25 @@ public class UnitTestView {
         return clearingPanel;
     }
 
+    /**
+     * Setting a listener on clearingbutton.
+     * @param actionListener to call on when action is performed.
+     */
     public void setClearOutPutListener(ActionListener actionListener){
         clearButton.addActionListener(actionListener);
     }
 
+    /**
+     * Setting a listener on sendinputbutton.
+     * @param actionListener to call on when action is performed.
+     */
+    public void setSendInputListener(ActionListener actionListener){
+        sendInputButton.addActionListener(actionListener);
+    }
+
+    public String getInputValue(){
+        return inputText.getText();
+    }
     public void clearOutPut(){
         outputText.setText(null);
     }

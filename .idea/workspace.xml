@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="GUI updated, now using scrollview.">
-      <change afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" afterDir="false" />
+    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Created Controller. &#10;Updated program to follow MVC in a better way.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/MyUnitTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/MyUnitTester.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/View/UnitTestView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/View/UnitTestView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +68,13 @@
       <option name="presentableId" value="LOCAL−00003" />
       <updated>1667908899798</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL−00004" summary="Created Controller. &#10;Updated program to follow MVC in a better way.">
+      <created>1667932225079</created>
+      <option name="number" value="LOCAL−00004" />
+      <option name="presentableId" value="LOCAL−00004" />
+      <updated>1667932225079</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -87,6 +92,7 @@
     <MESSAGE value="Added GUI. Not functional yet." />
     <MESSAGE value="Updated some GUI. Clear-button now working." />
     <MESSAGE value="GUI updated, now using scrollview." />
-    <option name="LAST_COMMIT_MESSAGE" value="GUI updated, now using scrollview." />
+    <MESSAGE value="Created Controller. &#10;Updated program to follow MVC in a better way." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created Controller. &#10;Updated program to follow MVC in a better way." />
   </component>
 </project>
