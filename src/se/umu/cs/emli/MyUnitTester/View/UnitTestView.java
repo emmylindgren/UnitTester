@@ -10,6 +10,7 @@ public class UnitTestView {
     private JButton sendInputButton;
     private JButton clearButton;
     private JTextArea outputText;
+    private JScrollPane outputTextScroll;
 
     public UnitTestView(String title){
         this.frame = new JFrame(title);
@@ -48,11 +49,12 @@ public class UnitTestView {
 
     private JPanel buildOutPutPanel(){
         JPanel outputPanel = new JPanel();
-        outputText = new JTextArea();
+        outputText = new JTextArea("hej");
         outputText.setEditable(false);
         outputPanel.setLayout(new BorderLayout());
 
-        outputPanel.add(outputText,BorderLayout.CENTER);
+        outputTextScroll = new JScrollPane(outputText);
+        outputPanel.add(outputTextScroll,BorderLayout.CENTER);
 
         return outputPanel;
     }
