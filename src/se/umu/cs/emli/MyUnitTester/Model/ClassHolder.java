@@ -20,7 +20,6 @@ public class ClassHolder {
         try {
             c = Class.forName(className);
             con = c.getConstructor();
-
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         } catch (NoSuchMethodException e) {
@@ -49,9 +48,7 @@ public class ClassHolder {
             throw new RuntimeException(e);
         }
 
-        if(o instanceof TestClass && con.getParameterCount() !=0) return false;
-
-        return true;
+        return o instanceof TestClass && con.getParameterCount() == 0;
     }
 
     //TODO: Return list of methods here?

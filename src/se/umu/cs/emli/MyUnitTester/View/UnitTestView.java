@@ -9,6 +9,7 @@ public class UnitTestView {
     private JFrame frame;
     private JButton sendInputButton;
     private JButton clearButton;
+    private JTextArea outputText;
 
     public UnitTestView(String title){
         this.frame = new JFrame(title);
@@ -20,11 +21,10 @@ public class UnitTestView {
 
         this.frame.setMinimumSize(new Dimension(400, 300));
         this.frame.add(inputPanel,BorderLayout.PAGE_START);
-        this.frame.add(outputPanel,BorderLayout.LINE_START);
+        this.frame.add(outputPanel,BorderLayout.CENTER);
         this.frame.add(clearingPanel,BorderLayout.PAGE_END);
 
         this.frame.pack();
-
     }
 
     public void show(){this.frame.setVisible(true);}
@@ -37,7 +37,9 @@ public class UnitTestView {
 
         JTextField inputText = new JTextField();
         sendInputButton = new JButton("Run tests");
-        //sendInputButton.addActionListener(); ?? vad göra här?
+        //TODO: Fix action listener run tests-button
+        //sendInputButton.addActionListener();
+
         inputPanel.add(inputText, BorderLayout.CENTER);
         inputPanel.add(sendInputButton,BorderLayout.LINE_END);
 
@@ -46,10 +48,11 @@ public class UnitTestView {
 
     private JPanel buildOutPutPanel(){
         JPanel outputPanel = new JPanel();
-        JTextArea outputText = new JTextArea();
+        outputText = new JTextArea();
         outputText.setEditable(false);
+        outputPanel.setLayout(new BorderLayout());
 
-        outputPanel.add(outputText);
+        outputPanel.add(outputText,BorderLayout.CENTER);
 
         return outputPanel;
     }
@@ -57,7 +60,8 @@ public class UnitTestView {
     private JPanel buildClearingPanel(){
         JPanel clearingPanel = new JPanel();
         clearButton = new JButton("Clear");
-        //clearButton.addActionListener();
+        clearButton.addActionListener(e -> outputText.setText(null));
+
         clearingPanel.add(clearButton);
 
         return clearingPanel;
