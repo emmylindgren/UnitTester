@@ -4,6 +4,7 @@ import javax.swing.*;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionListener;
 
 public class UnitTestView {
     private JFrame frame;
@@ -49,7 +50,6 @@ public class UnitTestView {
 
     private JPanel buildOutPutPanel(){
         JPanel outputPanel = new JPanel();
-        outputText = new JTextArea("hej");
         outputText.setEditable(false);
         outputPanel.setLayout(new BorderLayout());
 
@@ -62,10 +62,16 @@ public class UnitTestView {
     private JPanel buildClearingPanel(){
         JPanel clearingPanel = new JPanel();
         clearButton = new JButton("Clear");
-        clearButton.addActionListener(e -> outputText.setText(null));
 
         clearingPanel.add(clearButton);
-
         return clearingPanel;
+    }
+
+    public void setClearOutPutListener(ActionListener actionListener){
+        clearButton.addActionListener(actionListener);
+    }
+
+    public void clearOutPut(){
+        outputText.setText(null);
     }
 }
