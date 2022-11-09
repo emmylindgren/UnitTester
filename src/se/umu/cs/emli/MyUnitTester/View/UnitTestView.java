@@ -7,13 +7,11 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 public class UnitTestView {
-    private JFrame frame;
+    private final JFrame frame;
     private JButton sendInputButton;
-
     private JTextField inputText;
     private JButton clearButton;
     private JTextArea outputText;
-    private JScrollPane outputTextScroll;
 
     public UnitTestView(String title){
         this.frame = new JFrame(title);
@@ -52,9 +50,10 @@ public class UnitTestView {
         JPanel outputPanel = new JPanel();
         outputText = new JTextArea();
         outputText.setEditable(false);
+        outputText.setBorder(new EmptyBorder(5,5,5,5));
         outputPanel.setLayout(new BorderLayout());
 
-        outputTextScroll = new JScrollPane(outputText);
+        JScrollPane outputTextScroll = new JScrollPane(outputText);
         outputPanel.add(outputTextScroll,BorderLayout.CENTER);
 
         return outputPanel;
@@ -69,7 +68,7 @@ public class UnitTestView {
     }
 
     /**
-     * Setting a listener on clearingbutton.
+     * Attaching a listener on clearingbutton.
      * @param actionListener to call on when action is performed.
      */
     public void setClearOutPutListener(ActionListener actionListener){
@@ -77,7 +76,7 @@ public class UnitTestView {
     }
 
     /**
-     * Setting a listener on sendinputbutton.
+     * Attaching a listener on sendinputbutton.
      * @param actionListener to call on when action is performed.
      */
     public void setSendInputListener(ActionListener actionListener){
@@ -90,4 +89,5 @@ public class UnitTestView {
     public void clearOutPut(){
         outputText.setText(null);
     }
+    public void updateOutPut(String string){ outputText.append(string);}
 }
