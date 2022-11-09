@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Made a swingworker for handling running tests. Not done yet.">
+    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Updated resultholder to only hold nr of fails and success, not the reason of more than exception.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ResultHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ResultHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/View/UnitTestView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/View/UnitTestView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +15,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -44,6 +42,11 @@
     &quot;last_opened_file_path&quot;: &quot;C:/Users/Emmy/Downloads/TwoPanels&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="se.umu.cs.emli.MyUnitTester.Controller" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -89,7 +92,25 @@
       <option name="presentableId" value="LOCAL−00006" />
       <updated>1667991454568</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL−00007" summary="Updated the view to have some padding for text.">
+      <created>1668004196311</created>
+      <option name="number" value="LOCAL−00007" />
+      <option name="presentableId" value="LOCAL−00007" />
+      <updated>1668004196311</updated>
+    </task>
+    <task id="LOCAL−00008" summary="Added some functionality to worker.">
+      <created>1668004244176</created>
+      <option name="number" value="LOCAL−00008" />
+      <option name="presentableId" value="LOCAL−00008" />
+      <updated>1668004244176</updated>
+    </task>
+    <task id="LOCAL−00009" summary="Updated resultholder to only hold nr of fails and success, not the reason of more than exception.">
+      <created>1668004298196</created>
+      <option name="number" value="LOCAL−00009" />
+      <option name="presentableId" value="LOCAL−00009" />
+      <updated>1668004298196</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -110,6 +131,9 @@
     <MESSAGE value="Created Controller. &#10;Updated program to follow MVC in a better way." />
     <MESSAGE value="Set listener on both buttons. &#10;To run tests not yet implemented, needs to be on its own thread." />
     <MESSAGE value="Made a swingworker for handling running tests. Not done yet." />
-    <option name="LAST_COMMIT_MESSAGE" value="Made a swingworker for handling running tests. Not done yet." />
+    <MESSAGE value="Updated the view to have some padding for text." />
+    <MESSAGE value="Added some functionality to worker." />
+    <MESSAGE value="Updated resultholder to only hold nr of fails and success, not the reason of more than exception." />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated resultholder to only hold nr of fails and success, not the reason of more than exception." />
   </component>
 </project>

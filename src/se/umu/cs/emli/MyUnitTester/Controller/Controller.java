@@ -24,6 +24,7 @@ public class Controller {
 
     private void handleInput(){
         String text = this.view.getInputValue();
+        view.clearOutPut();
 
         ClassHolder holder = new ClassHolder("se.umu.cs.emli.MyUnitTester.Test1");
         TestWorker worker = new TestWorker(view,holder);
