@@ -7,12 +7,13 @@ import se.umu.cs.emli.MyUnitTester.View.UnitTestView;
 import javax.swing.*;
 import java.lang.reflect.InvocationTargetException;
 import java.util.List;
+import java.util.concurrent.ExecutionException;
 
 /**
  * Swingworker class to run testmethods.
  */
 
-public class TestWorker extends SwingWorker {
+public class TestWorker extends SwingWorker{
 
     private ClassHolder classHolder;
     private UnitTestView view;
@@ -25,7 +26,7 @@ public class TestWorker extends SwingWorker {
     }
 
     @Override
-    protected ResultHolder doInBackground() {
+    protected Boolean doInBackground() {
 
         if(classHolder.isValid()){
             List<String> testMethods = classHolder.getTestMethodNames();
@@ -60,9 +61,9 @@ public class TestWorker extends SwingWorker {
         }
         else{
             //TODO: hur ska jag stoppa detta? Kasta undantag? Returnera null?
-            String invalid = "Invalid test class." + classHolder.getInvalidReason();
+            return false;
         }
-        return null;
+        return true;
     }
 
     /**
@@ -78,10 +79,27 @@ public class TestWorker extends SwingWorker {
         }
     }
 
+    /**
+     * Runs on the EDT after @doInBackground has finished.
+     */
+    @Override
+    public void done(){
+        try {
+            boolean isValidClass = (boolean)get();
 
-    //Runs when doinbackground is done. Runs on the EDT and not on the swingworker?
-    protected void done(){
-        //Here we should print the final results
+            if(isValidClass){
+                view.updateOutPut(resultHolder.getResultText());
+            }
+            else{
+                view.updateOutPut("Invalid class." + classHolder.getInvalidReason());
+            }
+
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        } catch (ExecutionException e) {
+            throw new RuntimeException(e);
+        }
+
     }
 
 

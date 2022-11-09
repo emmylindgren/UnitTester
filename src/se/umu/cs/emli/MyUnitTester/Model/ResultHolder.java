@@ -17,9 +17,17 @@ public class ResultHolder {
 
     public void addSuccessTest(){nrOfSuccess ++;}
 
-    public int getNrOfSuccess(){return nrOfSuccess;}
+    public String getResultText(){
+        StringBuilder builder = new StringBuilder();
 
-    public int getNrOfFail(){return nrOfFail;}
-    public int getNrOfExceptions(){return nrOfExceptions;}
-    public int getTotalNrOfFails(){return nrOfExceptions + nrOfFail;}
+        builder.append(System.lineSeparator()).append(System.lineSeparator());
+
+        if(nrOfSuccess != 0){
+            builder.append(nrOfSuccess).append(" tests succeeded.").append(System.lineSeparator());
+        }
+        if(nrOfFail != 0){builder.append(nrOfFail).append(" tests failed.").append(System.lineSeparator());}
+        if(nrOfExceptions != 0){builder.append(nrOfExceptions).append(" tests failed because of exceptions");}
+
+        return builder.toString();
+    }
 }
