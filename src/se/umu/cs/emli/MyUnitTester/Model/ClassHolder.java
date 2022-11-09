@@ -14,9 +14,13 @@ public class ClassHolder {
     private Object o;
     private Method setUp;
     private Method tearDown;
-    private List<Method> testMethods;
+    private List<String> testMethods;
+    private String className;
+    private String invalidReason;
 
     public ClassHolder(String className){
+        this.className = className;
+        //TODO: Handle exceptions here. Should be handled in controller! (not worker)
         try {
             c = Class.forName(className);
             con = c.getConstructor();
@@ -34,10 +38,14 @@ public class ClassHolder {
      *
      * @return boolean true if class is valid, false if not.
      */
-    public boolean isClassValid(){
-        if(con.getParameterCount() !=0) return false;
+    public boolean isValid(){
 
-        //TODO: Handle the exceptions here?
+        if(con.getParameterCount() !=0){
+            invalidReason = className + "have too many parameters.";
+            return false;
+        }
+
+        //TODO: Handle the exceptions here: Write to UI, but do that from CONTROLLER! Swingworker?
         try {
             o = con.newInstance();
         } catch (InstantiationException e) {
@@ -48,11 +56,18 @@ public class ClassHolder {
             throw new RuntimeException(e);
         }
 
-        return o instanceof TestClass && con.getParameterCount() == 0;
+        if(!(o instanceof TestClass)){
+            invalidReason = className + "does not implement TestClass-interface.";
+            return false;
+        }
+
+        return true;
     }
 
+    public String getInvalidReason(){return invalidReason;}
+
     //TODO: Return list of methods here?
-    public void loadMethods(){
+    public List<String> getTestMethodNames(){
         try {
             setUp = c.getMethod("setUp");
         } catch (NoSuchMethodException e) {
@@ -65,15 +80,37 @@ public class ClassHolder {
         }
 
         Method[] methods = c.getMethods();
-        testMethods = new ArrayList<>();
+        testMethods = new ArrayList<String>();
         for (Method method: methods) {
             if(method.getName().startsWith("test") &&
                     method.getReturnType().getName().equals("boolean")){
-                testMethods.add(method);
+                testMethods.add(method.getName());
             }
         }
         //TODO: Remove prints.
         System.out.println("Metoder");
         System.out.println(testMethods);
+        return testMethods;
+    }
+
+    public void invokeSetUpTearDown(String choice){
+        if((choice.equals("setUp") && setUp != null)
+            || (choice.equals("tearDown") && tearDown !=null)){
+
+            try {
+                c.getMethod(choice).invoke(o);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
+                throw new RuntimeException(e);
+            } catch (NoSuchMethodException e) {
+                throw new RuntimeException(e);
+            }
+
+        }
+    }
+
+    public boolean invokeMethod(String methodName) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+        return (boolean) c.getMethod(methodName).invoke(o);
     }
 }
