@@ -13,6 +13,7 @@ import java.util.concurrent.ExecutionException;
  * Swingworker class to run testmethods.
  */
 
+//TODO: Maybe it should take parameters of some sort?
 public class TestWorker extends SwingWorker{
 
     private ClassHolder classHolder;
@@ -60,7 +61,6 @@ public class TestWorker extends SwingWorker{
             }
         }
         else{
-            //TODO: hur ska jag stoppa detta? Kasta undantag? Returnera null?
             return false;
         }
         return true;
