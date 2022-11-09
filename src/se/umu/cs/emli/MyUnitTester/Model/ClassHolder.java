@@ -8,6 +8,8 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+
+//TODO: Fix exceptions in this class.
 public class ClassHolder {
     private Class<?> c;
     private Constructor<?> con;
@@ -66,7 +68,7 @@ public class ClassHolder {
 
     public String getInvalidReason(){return invalidReason;}
 
-    //TODO: Return list of methods here?
+
     public List<String> getTestMethodNames(){
         try {
             setUp = c.getMethod("setUp");
@@ -80,37 +82,42 @@ public class ClassHolder {
         }
 
         Method[] methods = c.getMethods();
-        testMethods = new ArrayList<String>();
+        testMethods = new ArrayList<>();
         for (Method method: methods) {
             if(method.getName().startsWith("test") &&
                     method.getReturnType().getName().equals("boolean")){
                 testMethods.add(method.getName());
             }
         }
-        //TODO: Remove prints.
-        System.out.println("Metoder");
-        System.out.println(testMethods);
         return testMethods;
     }
 
-    public void invokeSetUpTearDown(String choice){
-        if((choice.equals("setUp") && setUp != null)
-            || (choice.equals("tearDown") && tearDown !=null)){
-
+    public void invokeSetUp(){
+        if(setUp != null) {
             try {
-                c.getMethod(choice).invoke(o);
+                setUp.invoke(o);
             } catch (IllegalAccessException e) {
                 throw new RuntimeException(e);
             } catch (InvocationTargetException e) {
                 throw new RuntimeException(e);
-            } catch (NoSuchMethodException e) {
+            }
+        }
+    }
+
+    public void invokeTearDown(){
+        if(tearDown != null) {
+            try {
+                tearDown.invoke(o);
+            } catch (IllegalAccessException e) {
+                throw new RuntimeException(e);
+            } catch (InvocationTargetException e) {
                 throw new RuntimeException(e);
             }
-
         }
     }
 
     public boolean invokeMethod(String methodName) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
         return (boolean) c.getMethod(methodName).invoke(o);
     }
+
 }

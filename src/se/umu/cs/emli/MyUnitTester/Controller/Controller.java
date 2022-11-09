@@ -1,5 +1,6 @@
 package se.umu.cs.emli.MyUnitTester.Controller;
 
+import se.umu.cs.emli.MyUnitTester.Model.ClassHolder;
 import se.umu.cs.emli.MyUnitTester.View.UnitTestView;
 
 public class Controller {
@@ -21,14 +22,13 @@ public class Controller {
         this.view.setClearOutPutListener(e -> view.clearOutPut());
     }
 
-    /*TODO: Check the value. Then run the test on a swingworker!! */
-        /* Old code but i think it will help.
-        ClassHolder holder = new ClassHolder("se.umu.cs.emli.MyUnitTester.Test1");
-        boolean isValid = holder.isClassValid();
-        System.out.println(isValid);
-        holder.loadMethods();*/
     private void handleInput(){
         String text = this.view.getInputValue();
+
+        ClassHolder holder = new ClassHolder("se.umu.cs.emli.MyUnitTester.Test1");
+        TestWorker worker = new TestWorker(view,holder);
+        worker.execute();
+
         //Also, TODO: Remove print!
         System.out.println(text);
     }
