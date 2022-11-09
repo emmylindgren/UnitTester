@@ -23,16 +23,17 @@ public class Controller {
     }
 
     private void handleInput(){
-        String text = this.view.getInputValue();
+        String input = this.view.getInputValue();
         view.clearOutPut();
-
-        ClassHolder holder = new ClassHolder("se.umu.cs.emli.MyUnitTester.Test1");
-        TestWorker worker = new TestWorker(view,holder);
-        worker.execute();
-
-        //Also, TODO: Remove print!
-        System.out.println(text);
+        try {
+            //Also, TODO: Remove hardcoded value for classname. input should be here.
+            ClassHolder holder = new ClassHolder("se.umu.cs.emli.MyUnitTester.Test1");
+            TestWorker worker = new TestWorker(view,holder);
+            worker.execute();
+        } catch (ClassNotFoundException e) {
+            view.updateOutPut("No testclass with that name found.");
+        } catch (NoSuchMethodException e) {
+            view.updateOutPut("Testclass had no constructor.");
+        }
     }
-
-
 }

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Updated resultholder to only hold nr of fails and success, not the reason of more than exception.">
+    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Clearing output-area before starting a test.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ResultHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ResultHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +110,19 @@
       <option name="presentableId" value="LOCAL−00009" />
       <updated>1668004298196</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL−00010" summary="Updated resultholder to build the result-text for the program.">
+      <created>1668013442700</created>
+      <option name="number" value="LOCAL−00010" />
+      <option name="presentableId" value="LOCAL−00010" />
+      <updated>1668013442700</updated>
+    </task>
+    <task id="LOCAL−00011" summary="Clearing output-area before starting a test.">
+      <created>1668013473869</created>
+      <option name="number" value="LOCAL−00011" />
+      <option name="presentableId" value="LOCAL−00011" />
+      <updated>1668013473869</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -134,6 +146,8 @@
     <MESSAGE value="Updated the view to have some padding for text." />
     <MESSAGE value="Added some functionality to worker." />
     <MESSAGE value="Updated resultholder to only hold nr of fails and success, not the reason of more than exception." />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated resultholder to only hold nr of fails and success, not the reason of more than exception." />
+    <MESSAGE value="Updated resultholder to build the result-text for the program." />
+    <MESSAGE value="Clearing output-area before starting a test." />
+    <option name="LAST_COMMIT_MESSAGE" value="Clearing output-area before starting a test." />
   </component>
 </project>

@@ -20,17 +20,10 @@ public class ClassHolder {
     private String className;
     private String invalidReason;
 
-    public ClassHolder(String className){
+    public ClassHolder(String className) throws ClassNotFoundException, NoSuchMethodException {
         this.className = className;
-        //TODO: Handle exceptions here. Should be handled in controller! (not worker)
-        try {
-            c = Class.forName(className);
-            con = c.getConstructor();
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchMethodException e) {
-            throw new RuntimeException(e);
-        }
+        c = Class.forName(className);
+        con = c.getConstructor();
     }
 
     /**
@@ -47,7 +40,8 @@ public class ClassHolder {
             return false;
         }
 
-        //TODO: Handle the exceptions here: Write to UI, but do that from CONTROLLER! Swingworker?
+        //TODO: Handle the exceptions here: Write to UI, but do that from CONTROLLER! Swingworker? Return false och sätt
+        // om reason till nåt annat eventuellt?
         try {
             o = con.newInstance();
         } catch (InstantiationException e) {
@@ -116,7 +110,8 @@ public class ClassHolder {
         }
     }
 
-    public boolean invokeMethod(String methodName) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
+    public boolean invokeMethod(String methodName) throws NoSuchMethodException,
+            InvocationTargetException, IllegalAccessException {
         return (boolean) c.getMethod(methodName).invoke(o);
     }
 
