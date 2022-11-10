@@ -18,7 +18,6 @@ public class Controller {
     }
 
     private void setUpListeners(){
-        //TODO: Set up listener on text-field for enter press: also send input!
         this.view.setSendInputListener(e -> this.handleInput());
         this.view.setClearOutPutListener(e -> view.clearOutPut());
     }

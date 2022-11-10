@@ -76,11 +76,12 @@ public class UnitTestView {
     }
 
     /**
-     * Attaching a listener on sendinputbutton.
+     * Attaching a listener on sendinputbutton and inputtext-field (on enter-press).
      * @param actionListener to call on when action is performed.
      */
     public void setSendInputListener(ActionListener actionListener){
         sendInputButton.addActionListener(actionListener);
+        inputText.addActionListener(actionListener);
     }
 
     public String getInputValue(){
