@@ -28,16 +28,18 @@ public class Controller {
      */
     private void handleInput(){
         String input = this.view.getInputValue();
+        String hej = "se.umu.cs.emli.MyUnitTester.Test2";
         view.clearOutPut();
         try {
             //Also, TODO: Remove hardcoded value for classname. input should be here.
-            ClassHolder holder = new ClassHolder("se.umu.cs.emli.MyUnitTester.Test1");
+            ClassHolder holder = new ClassHolder(hej);
             TestWorker worker = new TestWorker(view,holder);
             worker.execute();
         } catch (ClassNotFoundException e) {
             view.updateOutPut("No class with that name found.");
         } catch (NoSuchMethodException e) {
-            view.updateOutPut("Test class had no constructor.");
+            view.updateOutPut("Invalid class. "+ hej
+                    +" had no constructor or had constructor with parameters.");
         }
     }
 }

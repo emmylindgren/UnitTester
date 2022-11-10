@@ -29,6 +29,10 @@ public class ResultHolder {
     public String getResultText(){
         StringBuilder builder = new StringBuilder();
 
+        if(nrOfExceptions == 0 && nrOfFail == 0 && nrOfSuccess == 0){
+            return "Class had no test-methods to run.";
+        }
+
         builder.append(System.lineSeparator()).append(System.lineSeparator());
 
         if(nrOfSuccess != 0){

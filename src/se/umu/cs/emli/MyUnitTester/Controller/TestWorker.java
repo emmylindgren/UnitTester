@@ -66,7 +66,7 @@ public class TestWorker extends SwingWorker<String,String>{
             }
         }
         else{
-            return ("Invalid class." + classHolder.getInvalidReason());
+            return ("Invalid class. " + classHolder.getInvalidReason());
         }
         return resultHolder.getResultText();
     }

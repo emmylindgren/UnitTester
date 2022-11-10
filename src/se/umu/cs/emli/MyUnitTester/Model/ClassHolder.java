@@ -28,28 +28,24 @@ public class ClassHolder {
 
     /**
      * Checks if the current class is a valid test-class.
-     * i.e. does not take any parameters and implements the interface @TestClass.
+     * i.e. implements the interface @TestClass and does not have a private constructor.
      * If it's not a valid test-class then reason for not being valid is saved in invalidReason.
      *
      * @return boolean true if class is valid, false if not.
      */
     public boolean isValid(){
-
-        if(con.getParameterCount() !=0){
-            invalidReason = className + "have too many parameters.";
-            return false;
-        }
-
         try {
             o = con.newInstance();
         } catch (InstantiationException | InvocationTargetException e) {
             invalidReason = className + " can not be instantiated.";
+            return false;
         } catch (IllegalAccessException e) {
             invalidReason = className + " does not give permission to constructor.";
+            return false;
         }
 
         if(!(o instanceof TestClass)){
-            invalidReason = className + "does not implement TestClass-interface.";
+            invalidReason = className + " does not implement TestClass-interface.";
             return false;
         }
         return true;
