@@ -13,7 +13,6 @@ import java.util.concurrent.ExecutionException;
  * Swingworker class to run testmethods.
  */
 
-//TODO: Maybe it should take parameters of some sort?
 public class TestWorker extends SwingWorker<String,String>{
 
     private ClassHolder classHolder;
@@ -34,7 +33,7 @@ public class TestWorker extends SwingWorker<String,String>{
 
             for (String method:testMethods) {
                 try {
-                    classHolder.invokeSetUp();
+                    invokeSetUpTearDown("setUp");
                     boolean result = classHolder.invokeMethod(method);
 
                     if(result){
@@ -45,19 +44,17 @@ public class TestWorker extends SwingWorker<String,String>{
                         publish(method + ": FAIL");
                         resultHolder.addFailedTest();
                     }
-
                 } catch (NoSuchMethodException e) {
-                    throw new RuntimeException(e);
+                    publish(method + ": does not exist.");
                 } catch (InvocationTargetException e) {
                     publish(method + ": FAIL Generated a "+ e.getCause().getClass().getName());
                     resultHolder.addException();
                 } catch (IllegalAccessException e) {
-                    throw new RuntimeException(e);
+                    publish("Class does not give permission to run method: "+method);
                 }
                 finally {
-                    classHolder.invokeTearDown();
+                    invokeSetUpTearDown("tearDown");
                 }
-
             }
         }
         else{
@@ -66,10 +63,20 @@ public class TestWorker extends SwingWorker<String,String>{
         return resultHolder.getResultText();
     }
 
+    private void invokeSetUpTearDown(String choice){
+        try {
+            classHolder.invokeSetUpTearDown(choice);
+        } catch (InvocationTargetException e) {
+            publish("Method: " + choice + "can not be instantiated.");
+        } catch (IllegalAccessException e) {
+            publish("Class does not give permission to run method: " + choice);
+        }
+    }
+
     /**
      * Processing data from @doInBackground() while the loop is running.
      * Runs on the EDT and is therefor safe to manipulate the UI.
-     * @param chunks intermediate results to process
+     * @param chunks intermediate results to process. A list containing
      *
      */
     @Override
@@ -87,9 +94,8 @@ public class TestWorker extends SwingWorker<String,String>{
         try {
             String outPutText = get();
             view.updateOutPut(outPutText);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        } catch (ExecutionException e) {
+        } catch (InterruptedException | ExecutionException e) {
+            view.updateOutPut("Error occured: " + e.getCause());
             throw new RuntimeException(e);
         }
     }

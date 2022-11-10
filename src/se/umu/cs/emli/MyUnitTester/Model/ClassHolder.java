@@ -16,7 +16,6 @@ public class ClassHolder {
     private Object o;
     private Method setUp;
     private Method tearDown;
-    private List<String> testMethods;
     private String className;
     private String invalidReason;
 
@@ -40,23 +39,18 @@ public class ClassHolder {
             return false;
         }
 
-        //TODO: Handle the exceptions here: Write to UI, but do that from CONTROLLER! Swingworker? Return false och sätt
-        // om reason till nåt annat eventuellt?
         try {
             o = con.newInstance();
-        } catch (InstantiationException e) {
-            throw new RuntimeException(e);
+        } catch (InstantiationException | InvocationTargetException e) {
+            invalidReason = className + " can not be instantiated.";
         } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
+            invalidReason = className + " does not give permission to constructor.";
         }
 
         if(!(o instanceof TestClass)){
             invalidReason = className + "does not implement TestClass-interface.";
             return false;
         }
-
         return true;
     }
 
@@ -76,7 +70,7 @@ public class ClassHolder {
         }
 
         Method[] methods = c.getMethods();
-        testMethods = new ArrayList<>();
+        List<String> testMethods = new ArrayList<>();
         for (Method method: methods) {
             if(method.getName().startsWith("test") &&
                     method.getReturnType().getName().equals("boolean")){
@@ -86,27 +80,12 @@ public class ClassHolder {
         return testMethods;
     }
 
-    public void invokeSetUp(){
-        if(setUp != null) {
-            try {
-                setUp.invoke(o);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            } catch (InvocationTargetException e) {
-                throw new RuntimeException(e);
-            }
+    public void invokeSetUpTearDown(String choice) throws InvocationTargetException, IllegalAccessException {
+        if(choice.equals("setUp") && setUp != null){
+           setUp.invoke(o);
         }
-    }
-
-    public void invokeTearDown(){
-        if(tearDown != null) {
-            try {
-                tearDown.invoke(o);
-            } catch (IllegalAccessException e) {
-                throw new RuntimeException(e);
-            } catch (InvocationTargetException e) {
-                throw new RuntimeException(e);
-            }
+        else if(choice.equals("tearDown") && tearDown !=null){
+            tearDown.invoke(o);
         }
     }
 

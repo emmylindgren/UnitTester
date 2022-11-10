@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Added exceptionhandling for missing files and faulty testclasses.">
+    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Added parameters to swingworker. Got rid of some warnings!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +24,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2HDK27OzoHFWYJGiteUq0If9oqR" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -133,7 +136,13 @@
       <option name="presentableId" value="LOCAL−00013" />
       <updated>1668015162739</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL−00014" summary="Added parameters to swingworker. Got rid of some warnings!">
+      <created>1668073425212</created>
+      <option name="number" value="LOCAL−00014" />
+      <option name="presentableId" value="LOCAL−00014" />
+      <updated>1668073425212</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -161,6 +170,7 @@
     <MESSAGE value="Clearing output-area before starting a test." />
     <MESSAGE value="Cleaned up code." />
     <MESSAGE value="Added exceptionhandling for missing files and faulty testclasses." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added exceptionhandling for missing files and faulty testclasses." />
+    <MESSAGE value="Added parameters to swingworker. Got rid of some warnings!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added parameters to swingworker. Got rid of some warnings!" />
   </component>
 </project>
