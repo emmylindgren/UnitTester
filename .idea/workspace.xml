@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Clearing output-area before starting a test.">
+    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Added exceptionhandling for missing files and faulty testclasses.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,7 +121,19 @@
       <option name="presentableId" value="LOCAL−00011" />
       <updated>1668013473869</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL−00012" summary="Cleaned up code.">
+      <created>1668015113519</created>
+      <option name="number" value="LOCAL−00012" />
+      <option name="presentableId" value="LOCAL−00012" />
+      <updated>1668015113519</updated>
+    </task>
+    <task id="LOCAL−00013" summary="Added exceptionhandling for missing files and faulty testclasses.">
+      <created>1668015162739</created>
+      <option name="number" value="LOCAL−00013" />
+      <option name="presentableId" value="LOCAL−00013" />
+      <updated>1668015162739</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -148,6 +159,8 @@
     <MESSAGE value="Updated resultholder to only hold nr of fails and success, not the reason of more than exception." />
     <MESSAGE value="Updated resultholder to build the result-text for the program." />
     <MESSAGE value="Clearing output-area before starting a test." />
-    <option name="LAST_COMMIT_MESSAGE" value="Clearing output-area before starting a test." />
+    <MESSAGE value="Cleaned up code." />
+    <MESSAGE value="Added exceptionhandling for missing files and faulty testclasses." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added exceptionhandling for missing files and faulty testclasses." />
   </component>
 </project>

@@ -14,7 +14,7 @@ import java.util.concurrent.ExecutionException;
  */
 
 //TODO: Maybe it should take parameters of some sort?
-public class TestWorker extends SwingWorker{
+public class TestWorker extends SwingWorker<String,String>{
 
     private ClassHolder classHolder;
     private UnitTestView view;
@@ -27,7 +27,7 @@ public class TestWorker extends SwingWorker{
     }
 
     @Override
-    protected Boolean doInBackground() {
+    protected String doInBackground() throws InterruptedException {
 
         if(classHolder.isValid()){
             List<String> testMethods = classHolder.getTestMethodNames();
@@ -61,9 +61,9 @@ public class TestWorker extends SwingWorker{
             }
         }
         else{
-            return false;
+            return ("Invalid class." + classHolder.getInvalidReason());
         }
-        return true;
+        return resultHolder.getResultText();
     }
 
     /**
@@ -85,22 +85,13 @@ public class TestWorker extends SwingWorker{
     @Override
     public void done(){
         try {
-            boolean isValidClass = (boolean)get();
-
-            if(isValidClass){
-                view.updateOutPut(resultHolder.getResultText());
-            }
-            else{
-                view.updateOutPut("Invalid class." + classHolder.getInvalidReason());
-            }
-
+            String outPutText = get();
+            view.updateOutPut(outPutText);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         } catch (ExecutionException e) {
             throw new RuntimeException(e);
         }
-
     }
-
 
 }
