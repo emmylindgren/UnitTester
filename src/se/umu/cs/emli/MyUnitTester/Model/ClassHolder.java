@@ -8,6 +8,9 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Class to hold info about test-classes.
+ */
 public class ClassHolder {
     private final Class<?> c;
     private final Constructor<?> con;
@@ -25,8 +28,8 @@ public class ClassHolder {
 
     /**
      * Checks if the current class is a valid test-class.
-     * i.e. does not take any parameters and implements the
-     * interface @TestClass.
+     * i.e. does not take any parameters and implements the interface @TestClass.
+     * If it's not a valid test-class then reason for not being valid is saved in invalidReason.
      *
      * @return boolean true if class is valid, false if not.
      */
@@ -55,6 +58,15 @@ public class ClassHolder {
     public String getInvalidReason(){return invalidReason;}
 
 
+    /**
+     * Gets methods from class and sorts out test-methods.
+     * A test-method starts with the name tests, does not take any parameters and
+     * returns a boolean value.
+     * If setUp and tearDown exist then they are also saved in the model,
+     * if not they are saved as null.
+     *
+     * @return a list with test-method names from the class.
+     */
     public List<String> getTestMethodNames(){
         try {
             setUp = c.getMethod("setUp");
@@ -71,13 +83,22 @@ public class ClassHolder {
         List<String> testMethods = new ArrayList<>();
         for (Method method: methods) {
             if(method.getName().startsWith("test") &&
-                    method.getReturnType().getName().equals("boolean")){
+                    method.getReturnType().getName().equals("boolean") &&
+                    method.getParameterCount() == 0){
                 testMethods.add(method.getName());
             }
         }
         return testMethods;
     }
 
+    /**
+     * Method to invoke method setUp or tearDown.
+     * Needed as these method does not necessarily return boolean values
+     * and does not need to exist in class.
+     * @param choice, a string containing the choice of setUp or tearDown.
+     * @throws InvocationTargetException, if the method could not be invoked.
+     * @throws IllegalAccessException, if the method could not be accessed.
+     */
     public void invokeSetUpTearDown(String choice) throws InvocationTargetException, IllegalAccessException {
         if(choice.equals("setUp") && setUp != null){
            setUp.invoke(o);
@@ -87,6 +108,14 @@ public class ClassHolder {
         }
     }
 
+    /**
+     * Method for invoking methods from method-names.
+     * @param methodName, the name of the method to be invoked.
+     * @return boolean value, the result of the method invoked.
+     * @throws NoSuchMethodException, if the method does not exist.
+     * @throws InvocationTargetException, if the method could not be invoked.
+     * @throws IllegalAccessException, if the method could not be accessed.
+     */
     public boolean invokeMethod(String methodName) throws NoSuchMethodException,
             InvocationTargetException, IllegalAccessException {
         return (boolean) c.getMethod(methodName).invoke(o);

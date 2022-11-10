@@ -10,11 +10,11 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Swing-worker class to run test-methods.
+ * A Swing-worker class to run test-methods.
+ * Runs test-methods on given class and prints the results after every test.
  */
 
 public class TestWorker extends SwingWorker<String,String>{
-
     private final ClassHolder classHolder;
     private final UnitTestView view;
     private final ResultHolder resultHolder;
@@ -25,6 +25,14 @@ public class TestWorker extends SwingWorker<String,String>{
         this.resultHolder = new ResultHolder();
     }
 
+    /**
+     * Executes possibly time-consuming method-invocations.
+     * Runs on different thread than EDT and should NOT manipulate the UI in any way.
+     * To manipulate UI with partial results from methods, publish() is used to send
+     * results to @process, which runs on EDT.
+     *
+     * @return string with final results of the testruns.
+     */
     @Override
     protected String doInBackground(){
 
@@ -63,20 +71,10 @@ public class TestWorker extends SwingWorker<String,String>{
         return resultHolder.getResultText();
     }
 
-    private void invokeSetUpTearDown(String choice){
-        try {
-            classHolder.invokeSetUpTearDown(choice);
-        } catch (InvocationTargetException e) {
-            publish("Method: " + choice + "can not be instantiated.");
-        } catch (IllegalAccessException e) {
-            publish("Class does not give permission to run method: " + choice);
-        }
-    }
-
     /**
      * Processing data from @doInBackground() while the loop is running.
      * Runs on the EDT and is therefor safe to manipulate the UI.
-     * @param chunks intermediate results to process. A list containing
+     * @param chunks intermediate results to process. A list containing strings with output.
      *
      */
     @Override
@@ -88,15 +86,31 @@ public class TestWorker extends SwingWorker<String,String>{
 
     /**
      * Runs on the EDT after @doInBackground has finished.
+     * Prints the results of the tests.
      */
     @Override
     public void done(){
         try {
-            String outPutText = get();
-            view.updateOutPut(outPutText);
+            String resultText = get();
+            view.updateOutPut(resultText);
         } catch (ExecutionException | InterruptedException e) {
             view.updateOutPut("Error occurred: " + e.getCause());
         }
     }
 
+    /**
+     * Method to invoke setup and teardown methods in class.
+     * Needed to be able to print the right error-messages to user and because
+     * setup and teardown does not return boolean.
+     * @param choice, the choice of setUp or tearDown method to be run.
+     */
+    private void invokeSetUpTearDown(String choice){
+        try {
+            classHolder.invokeSetUpTearDown(choice);
+        } catch (InvocationTargetException e) {
+            publish("Method: " + choice + "can not be instantiated.");
+        } catch (IllegalAccessException e) {
+            publish("Class does not give permission to run method: " + choice);
+        }
+    }
 }

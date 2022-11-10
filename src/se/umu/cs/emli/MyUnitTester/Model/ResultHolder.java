@@ -1,5 +1,8 @@
 package se.umu.cs.emli.MyUnitTester.Model;
 
+/**
+ * Class to hold the results of a test-run.
+ */
 public class ResultHolder {
     private int nrOfSuccess;
     private int nrOfFail;
@@ -17,6 +20,12 @@ public class ResultHolder {
 
     public void addSuccessTest(){nrOfSuccess ++;}
 
+    /**
+     * Builds a string with the final results of the test-run.
+     * Contains information about number of successfull tests, failed tests and
+     * number of failed tests because of exceptions (if there are any).
+     * @return string containing final results.
+     */
     public String getResultText(){
         StringBuilder builder = new StringBuilder();
 
