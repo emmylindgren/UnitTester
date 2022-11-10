@@ -1,11 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Minor fixes with errormessages.">
-      <change afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Test2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/TestWithParameters.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/TestWithoutImplements.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Added some testclasses for testing program.">
+      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/View/UnitTestView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/View/UnitTestView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -173,7 +170,13 @@
       <option name="presentableId" value="LOCAL−00019" />
       <updated>1668092170050</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL−00020" summary="Added some testclasses for testing program.">
+      <created>1668093161975</created>
+      <option name="number" value="LOCAL−00020" />
+      <option name="presentableId" value="LOCAL−00020" />
+      <updated>1668093161975</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -207,6 +210,7 @@
     <MESSAGE value="Now enter-press in textfield also starts testrun." />
     <MESSAGE value="Commented code." />
     <MESSAGE value="Minor fixes with errormessages." />
-    <option name="LAST_COMMIT_MESSAGE" value="Minor fixes with errormessages." />
+    <MESSAGE value="Added some testclasses for testing program." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added some testclasses for testing program." />
   </component>
 </project>

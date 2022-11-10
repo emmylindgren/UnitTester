@@ -6,6 +6,10 @@ import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
+/**
+ * GUI for input from user and output from program.
+ * Run button for input and clear button for output.
+ */
 public class UnitTestView {
     private final JFrame frame;
     private JButton sendInputButton;
