@@ -10,14 +10,14 @@ import java.util.List;
 import java.util.concurrent.ExecutionException;
 
 /**
- * Swingworker class to run testmethods.
+ * Swing-worker class to run test-methods.
  */
 
 public class TestWorker extends SwingWorker<String,String>{
 
-    private ClassHolder classHolder;
-    private UnitTestView view;
-    private ResultHolder resultHolder;
+    private final ClassHolder classHolder;
+    private final UnitTestView view;
+    private final ResultHolder resultHolder;
 
     public TestWorker (UnitTestView view, ClassHolder classHolder){
         this.classHolder = classHolder;
@@ -26,7 +26,7 @@ public class TestWorker extends SwingWorker<String,String>{
     }
 
     @Override
-    protected String doInBackground() throws InterruptedException {
+    protected String doInBackground(){
 
         if(classHolder.isValid()){
             List<String> testMethods = classHolder.getTestMethodNames();
@@ -94,9 +94,8 @@ public class TestWorker extends SwingWorker<String,String>{
         try {
             String outPutText = get();
             view.updateOutPut(outPutText);
-        } catch (InterruptedException | ExecutionException e) {
-            view.updateOutPut("Error occured: " + e.getCause());
-            throw new RuntimeException(e);
+        } catch (ExecutionException | InterruptedException e) {
+            view.updateOutPut("Error occurred: " + e.getCause());
         }
     }
 

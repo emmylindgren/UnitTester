@@ -8,15 +8,13 @@ import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
-
-//TODO: Fix exceptions in this class.
 public class ClassHolder {
-    private Class<?> c;
-    private Constructor<?> con;
+    private final Class<?> c;
+    private final Constructor<?> con;
     private Object o;
     private Method setUp;
     private Method tearDown;
-    private String className;
+    private final String className;
     private String invalidReason;
 
     public ClassHolder(String className) throws ClassNotFoundException, NoSuchMethodException {
@@ -26,7 +24,7 @@ public class ClassHolder {
     }
 
     /**
-     * Checks if the current class is a valid testclass.
+     * Checks if the current class is a valid test-class.
      * i.e. does not take any parameters and implements the
      * interface @TestClass.
      *

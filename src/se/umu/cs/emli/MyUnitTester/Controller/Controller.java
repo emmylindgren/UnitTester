@@ -4,7 +4,7 @@ import se.umu.cs.emli.MyUnitTester.Model.ClassHolder;
 import se.umu.cs.emli.MyUnitTester.View.UnitTestView;
 
 public class Controller {
-    private UnitTestView view;
+    private final UnitTestView view;
 
     /**
      * Init the controller. Setting up the graphical user interface,
@@ -18,7 +18,7 @@ public class Controller {
     }
 
     private void setUpListeners(){
-        //TODO: Set up listener on textfield for enter press: also send input!
+        //TODO: Set up listener on text-field for enter press: also send input!
         this.view.setSendInputListener(e -> this.handleInput());
         this.view.setClearOutPutListener(e -> view.clearOutPut());
     }
@@ -32,9 +32,9 @@ public class Controller {
             TestWorker worker = new TestWorker(view,holder);
             worker.execute();
         } catch (ClassNotFoundException e) {
-            view.updateOutPut("No testclass with that name found.");
+            view.updateOutPut("No test class with that name found.");
         } catch (NoSuchMethodException e) {
-            view.updateOutPut("Testclass had no constructor.");
+            view.updateOutPut("Test class had no constructor.");
         }
     }
 }
