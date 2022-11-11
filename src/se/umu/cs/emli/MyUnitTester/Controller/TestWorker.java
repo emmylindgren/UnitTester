@@ -72,7 +72,9 @@ public class TestWorker extends SwingWorker<String,String>{
     }
 
     /**
-     * Processing data from @doInBackground() while the loop is running.
+     * Processing data from @doInBackground() while the loop is running. Gets data from @doInBackground with
+     * the help of method Publish(chunk). Gets put in list so no chunk is missed if several calls to publish is made
+     * before the first has processed.
      * Runs on the EDT and is therefor safe to manipulate the UI.
      * @param chunks intermediate results to process. A list containing strings with output.
      *
