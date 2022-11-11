@@ -20,7 +20,7 @@ public class ClassHolder {
     private final String className;
     private String invalidReason;
 
-    public ClassHolder(String className) throws ClassNotFoundException, NoSuchMethodException {
+    public ClassHolder(String className) throws ClassNotFoundException, NoSuchMethodException, NoClassDefFoundError {
         this.className = className;
         c = Class.forName(className);
         con = c.getConstructor();
