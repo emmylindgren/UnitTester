@@ -23,6 +23,15 @@ public class Test2 implements TestClass {
         return false;
     }
 
+    public boolean testwithtrue() {
+        return true;
+    }
+
+    public boolean testFailingByException() {
+        myInt=null;
+        myInt.decrement();
+        return true;
+    }
     public boolean testwithParams(String hej){
         return true;
     }
