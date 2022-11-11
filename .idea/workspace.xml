@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Added comment on view-class.">
+    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Added more comments.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/MyUnitTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/MyUnitTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,7 +183,13 @@
       <option name="presentableId" value="LOCAL−00021" />
       <updated>1668093293777</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL−00022" summary="Added more comments.">
+      <created>1668165291768</created>
+      <option name="number" value="LOCAL−00022" />
+      <option name="presentableId" value="LOCAL−00022" />
+      <updated>1668165291768</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -219,6 +225,7 @@
     <MESSAGE value="Minor fixes with errormessages." />
     <MESSAGE value="Added some testclasses for testing program." />
     <MESSAGE value="Added comment on view-class." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added comment on view-class." />
+    <MESSAGE value="Added more comments." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added more comments." />
   </component>
 </project>
