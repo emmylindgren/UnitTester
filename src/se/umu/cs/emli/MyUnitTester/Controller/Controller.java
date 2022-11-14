@@ -28,7 +28,7 @@ public class Controller {
      */
     private void handleInput(){
         String input = this.view.getInputValue();
-        String hej = "se.umu.cs.emli.MyUnitTester.test2";
+        String hej = "se.umu.cs.emli.MyUnitTester.Test2";
         view.clearOutPut();
         try {
             //Also, TODO: Remove hardcoded value for classname. input should be here.

@@ -54,6 +54,7 @@ public class UnitTestView {
         JPanel outputPanel = new JPanel();
         outputText = new JTextArea();
         outputText.setEditable(false);
+        outputText.setLineWrap(true);
         outputText.setBorder(new EmptyBorder(5,5,5,5));
         outputPanel.setLayout(new BorderLayout());
 
