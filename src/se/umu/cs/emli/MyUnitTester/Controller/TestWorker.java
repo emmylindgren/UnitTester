@@ -30,12 +30,13 @@ public class TestWorker extends SwingWorker<String,String>{
      * Runs on different thread than EDT and should NOT manipulate the UI in any way.
      * To manipulate UI with partial results from methods, publish() is used to send
      * results to @process, which runs on EDT.
-     *
+     * Disables runbutton in view to keep user from running more test when a test is in progress.
      * @return string with final results of the testruns.
      */
     @Override
     protected String doInBackground(){
 
+        view.disableRunButton();
         if(classHolder.isValid()){
             List<String> testMethods = classHolder.getTestMethodNames();
 
@@ -89,9 +90,12 @@ public class TestWorker extends SwingWorker<String,String>{
     /**
      * Runs on the EDT after @doInBackground has finished.
      * Prints the results of the tests.
+     * Enables runbutton in view to let the user run other tests now
+     * that these tests are done.
      */
     @Override
     public void done(){
+        view.enableRunButton();
         try {
             String resultText = get();
             view.updateOutPut(resultText);

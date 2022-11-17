@@ -89,6 +89,16 @@ public class UnitTestView {
         inputText.addActionListener(actionListener);
     }
 
+    public void enableRunButton(){
+        sendInputButton.setEnabled(true);
+        sendInputButton.setText("Run tests");
+    }
+
+    public void disableRunButton(){
+        sendInputButton.setEnabled(false);
+        sendInputButton.setText("Testing...");
+    }
+
     public String getInputValue(){
         return inputText.getText();
     }
