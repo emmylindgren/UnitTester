@@ -6,13 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Fixed gui to make sure only one testclass can be run at a time.">
-      <change afterPath="$PROJECT_DIR$/.idea/artifacts/MyUnitTester_jar.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/META-INF/MANIFEST.MF" afterDir="false" />
+    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Added jar-file and manifestfile.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Test2.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,14 +44,15 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Emmy/IdeaProjects/MyUnitTester/out/artifacts/MyUnitTester_jar",
+    "last_opened_file_path": "C:/Users/Emmy/IdeaProjects/MyUnitTester/src/se/umu/cs/emli/MyUnitTester",
     "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.0",
+    "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Emmy\IdeaProjects\MyUnitTester\src\se\umu\cs\emli\MyUnitTester" />
       <recent name="C:\Users\Emmy\IdeaProjects\MyUnitTester\out\artifacts\MyUnitTester_jar" />
     </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
@@ -234,7 +230,13 @@
       <option name="presentableId" value="LOCAL−00027" />
       <updated>1668683559852</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL−00028" summary="Added jar-file and manifestfile.">
+      <created>1668689009715</created>
+      <option name="number" value="LOCAL−00028" />
+      <option name="presentableId" value="LOCAL−00028" />
+      <updated>1668689009715</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -249,7 +251,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated some GUI. Clear-button now working." />
     <MESSAGE value="GUI updated, now using scrollview." />
     <MESSAGE value="Created Controller. &#10;Updated program to follow MVC in a better way." />
     <MESSAGE value="Set listener on both buttons. &#10;To run tests not yet implemented, needs to be on its own thread." />
@@ -274,6 +275,7 @@
     <MESSAGE value="Bugfix, input classname right but with small letter." />
     <MESSAGE value="Inserted linewrap on textarea." />
     <MESSAGE value="Fixed gui to make sure only one testclass can be run at a time." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed gui to make sure only one testclass can be run at a time." />
+    <MESSAGE value="Added jar-file and manifestfile." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added jar-file and manifestfile." />
   </component>
 </project>
