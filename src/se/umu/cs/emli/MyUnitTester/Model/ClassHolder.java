@@ -20,9 +20,17 @@ public class ClassHolder {
     private final String className;
     private String invalidReason;
 
-    public ClassHolder(String className) throws ClassNotFoundException, NoSuchMethodException, NoClassDefFoundError {
+    public ClassHolder(String className) throws NoSuchMethodException, NoClassDefFoundError, ClassNotFoundException {
+        Class<?> c1;
         this.className = className;
-        c = Class.forName(className);
+
+        ClassLoader loader = this.getClass().getClassLoader();
+        try {
+            c1 = loader.loadClass(className);
+        } catch (ClassNotFoundException e) {
+            c1 = Class.forName("se.umu.cs.emli.MyUnitTester."+className);
+        }
+        c = c1;
         con = c.getConstructor();
     }
 
