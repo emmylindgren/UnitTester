@@ -1,13 +1,10 @@
 package se.umu.cs.emli.MyUnitTester.Model;
 
 import se.umu.cs.unittest.TestClass;
-
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
-import java.util.List;
-
 /**
  * Class to hold info about test-classes.
  * @author Emmy Lindgren, id19eln
@@ -21,6 +18,9 @@ public class ClassHolder {
     private final String className;
     private String invalidReason;
 
+    private ArrayList<Method> testMethods;
+    private final ResultHolder resultHolder;
+
     public ClassHolder(String className) throws NoSuchMethodException, NoClassDefFoundError, ClassNotFoundException {
         Class<?> c1;
         this.className = className;
@@ -33,6 +33,8 @@ public class ClassHolder {
         }
         c = c1;
         con = c.getConstructor();
+        getTestMethodNames();
+        resultHolder = new ResultHolder();
     }
 
     /**
@@ -69,10 +71,8 @@ public class ClassHolder {
      * returns a boolean value.
      * If setUp and tearDown exist then they are also saved in the model,
      * if not they are saved as null.
-     *
-     * @return a list with test-method names from the class.
      */
-    public List<String> getTestMethodNames(){
+    public void getTestMethodNames(){
         try {
             setUp = c.getMethod("setUp");
         } catch (NoSuchMethodException e) {
@@ -85,15 +85,14 @@ public class ClassHolder {
         }
 
         Method[] methods = c.getMethods();
-        List<String> testMethods = new ArrayList<>();
+        testMethods = new ArrayList<>();
         for (Method method: methods) {
             if(method.getName().startsWith("test") &&
                     method.getReturnType().getName().equals("boolean") &&
                     method.getParameterCount() == 0){
-                testMethods.add(method.getName());
+                testMethods.add(method);
             }
         }
-        return testMethods;
     }
 
     /**
@@ -101,29 +100,52 @@ public class ClassHolder {
      * Needed as these method does not necessarily return boolean values
      * and does not need to exist in class.
      * @param choice, a string containing the choice of setUp or tearDown.
-     * @throws InvocationTargetException, if the method could not be invoked.
-     * @throws IllegalAccessException, if the method could not be accessed.
      */
-    public void invokeSetUpTearDown(String choice) throws InvocationTargetException, IllegalAccessException {
-        if(choice.equals("setUp") && setUp != null){
-           setUp.invoke(o);
-        }
-        else if(choice.equals("tearDown") && tearDown !=null){
-            tearDown.invoke(o);
+    private String invokeSetUpTearDown(String choice){
+        try {
+                if(choice.equals("setUp") && setUp != null){
+                    setUp.invoke(o);
+                }
+                else if(choice.equals("tearDown") && tearDown !=null){
+                    tearDown.invoke(o);
+                }
+                return "";
+        } catch (IllegalAccessException e) {
+            return "Method "+choice+ "could not be accessed.";
+        } catch (InvocationTargetException e) {
+            return "Class does not give permission to run method: " + choice;
         }
     }
 
-    /**
-     * Method for invoking methods from method-names.
-     * @param methodName, the name of the method to be invoked.
-     * @return boolean value, the result of the method invoked.
-     * @throws NoSuchMethodException, if the method does not exist.
-     * @throws InvocationTargetException, if the method could not be invoked.
-     * @throws IllegalAccessException, if the method could not be accessed.
-     */
-    public boolean invokeMethod(String methodName) throws NoSuchMethodException,
-            InvocationTargetException, IllegalAccessException {
-        return (boolean) c.getMethod(methodName).invoke(o);
+    public boolean hasTestMethodsToRun(){
+        return !testMethods.isEmpty();
     }
 
+    public String runNextTestMethod() {
+        Method method = testMethods.get(0);
+        testMethods.remove(method);
+        String result = "";
+        try {
+            result += invokeSetUpTearDown("setUp");
+            boolean testPassed = (boolean) method.invoke(o);
+
+            if (testPassed) {
+                resultHolder.addSuccessTest();
+                result += method.getName() + ": SUCCESS";
+            } else {
+                resultHolder.addFailedTest();
+                result += method.getName() + ": FAIL";
+            }
+            result += invokeSetUpTearDown("tearDown");
+        } catch (InvocationTargetException e) {
+            resultHolder.addException();
+            result += method.getName() + ": FAIL Generated a " + e.getCause().getClass().getName();
+        } catch (IllegalAccessException e) {
+           result += "Class does not give permission to run method: " + method.getName();
+        }
+        return result;
+    }
+    public String getResults(){
+        return resultHolder.getResultText();
+    }
 }
