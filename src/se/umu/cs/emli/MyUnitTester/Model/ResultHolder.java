@@ -2,6 +2,7 @@ package se.umu.cs.emli.MyUnitTester.Model;
 
 /**
  * Class to hold the results of a test-run.
+ * @author Emmy Lindgren, id19eln
  */
 public class ResultHolder {
     private int nrOfSuccess;

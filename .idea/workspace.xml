@@ -6,10 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Added report.">
+    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Added author-tags.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ResultHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ResultHolder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/MyUnitTester.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/MyUnitTester.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -253,7 +256,13 @@
       <option name="presentableId" value="LOCAL−00029" />
       <updated>1668691518909</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL−00030" summary="Fixed some things from feedback. Need to fix some more things.">
+      <created>1669808817941</created>
+      <option name="number" value="LOCAL−00030" />
+      <option name="presentableId" value="LOCAL−00030" />
+      <updated>1669808817941</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -268,8 +277,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created Controller. &#10;Updated program to follow MVC in a better way." />
-    <MESSAGE value="Set listener on both buttons. &#10;To run tests not yet implemented, needs to be on its own thread." />
     <MESSAGE value="Made a swingworker for handling running tests. Not done yet." />
     <MESSAGE value="Updated the view to have some padding for text." />
     <MESSAGE value="Added some functionality to worker." />
@@ -293,6 +300,8 @@
     <MESSAGE value="Fixed gui to make sure only one testclass can be run at a time." />
     <MESSAGE value="Added jar-file and manifestfile." />
     <MESSAGE value="Added report." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added report." />
+    <MESSAGE value="Fixed some things from feedback. Need to fix some more things." />
+    <MESSAGE value="Added author-tags." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added author-tags." />
   </component>
 </project>

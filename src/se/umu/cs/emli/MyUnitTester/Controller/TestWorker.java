@@ -12,6 +12,7 @@ import java.util.concurrent.ExecutionException;
 /**
  * A Swing-worker class to run test-methods.
  * Runs test-methods on given class and prints the results after every test.
+ * @author Emmy Lindgren, id19eln
  */
 
 public class TestWorker extends SwingWorker<String,String>{

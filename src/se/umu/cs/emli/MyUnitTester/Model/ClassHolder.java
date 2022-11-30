@@ -10,6 +10,7 @@ import java.util.List;
 
 /**
  * Class to hold info about test-classes.
+ * @author Emmy Lindgren, id19eln
  */
 public class ClassHolder {
     private final Class<?> c;

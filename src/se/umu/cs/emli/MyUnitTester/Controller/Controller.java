@@ -1,7 +1,9 @@
 package se.umu.cs.emli.MyUnitTester.Controller;
-
 import se.umu.cs.emli.MyUnitTester.Model.ClassHolder;
 import se.umu.cs.emli.MyUnitTester.View.UnitTestView;
+/**
+ * @author Emmy Lindgren, id19eln
+ */
 
 public class Controller {
     private final UnitTestView view;
