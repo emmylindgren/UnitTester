@@ -9,6 +9,7 @@ import java.awt.event.ActionListener;
 /**
  * GUI for input from user and output from program.
  * Run button for input and clear button for output.
+ * @author Emmy Lindgren, id19eln
  */
 public class UnitTestView {
     private final JFrame frame;
