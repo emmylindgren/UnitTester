@@ -64,15 +64,14 @@ public class ClassHolder {
 
     public String getInvalidReason(){return invalidReason;}
 
-
     /**
-     * Gets methods from class and sorts out test-methods.
+     * Gets methods from class and sorts out test-methods. Saves them in list of methods to run.
      * A test-method starts with the name tests, does not take any parameters and
      * returns a boolean value.
      * If setUp and tearDown exist then they are also saved in the model,
      * if not they are saved as null.
      */
-    public void getTestMethodNames(){
+    private void getTestMethodNames(){
         try {
             setUp = c.getMethod("setUp");
         } catch (NoSuchMethodException e) {
@@ -103,13 +102,13 @@ public class ClassHolder {
      */
     private String invokeSetUpTearDown(String choice){
         try {
-                if(choice.equals("setUp") && setUp != null){
-                    setUp.invoke(o);
-                }
-                else if(choice.equals("tearDown") && tearDown !=null){
-                    tearDown.invoke(o);
-                }
-                return "";
+            if(choice.equals("setUp") && setUp != null){
+                setUp.invoke(o);
+            }
+            else if(choice.equals("tearDown") && tearDown !=null){
+                tearDown.invoke(o);
+            }
+            return "";
         } catch (IllegalAccessException e) {
             return "Method "+choice+ "could not be accessed.";
         } catch (InvocationTargetException e) {

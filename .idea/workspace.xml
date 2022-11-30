@@ -6,9 +6,8 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Added author-tags.">
+    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Moved logic to model.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -276,7 +275,13 @@
       <option name="presentableId" value="LOCAL−00032" />
       <updated>1669823204070</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL−00033" summary="Moved logic to model.">
+      <created>1669836174291</created>
+      <option name="number" value="LOCAL−00033" />
+      <option name="presentableId" value="LOCAL−00033" />
+      <updated>1669836174291</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -291,7 +296,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made a swingworker for handling running tests. Not done yet." />
     <MESSAGE value="Updated the view to have some padding for text." />
     <MESSAGE value="Added some functionality to worker." />
     <MESSAGE value="Updated resultholder to only hold nr of fails and success, not the reason of more than exception." />
@@ -316,6 +320,7 @@
     <MESSAGE value="Added report." />
     <MESSAGE value="Fixed some things from feedback. Need to fix some more things." />
     <MESSAGE value="Added author-tags." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added author-tags." />
+    <MESSAGE value="Moved logic to model." />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved logic to model." />
   </component>
 </project>
