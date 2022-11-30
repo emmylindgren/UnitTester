@@ -6,8 +6,10 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Added jar-file and manifestfile.">
+    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Added report.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/Controller.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Controller/TestWorker.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,17 +41,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "last_opened_file_path": "C:/Users/Emmy/IdeaProjects/MyUnitTester/src/se/umu/cs/emli/MyUnitTester",
-    "project.structure.last.edited": "Artifacts",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Emmy/IdeaProjects/MyUnitTester/src/se/umu/cs/emli/MyUnitTester&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Emmy\IdeaProjects\MyUnitTester\src\se\umu\cs\emli\MyUnitTester" />
@@ -58,6 +60,15 @@
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="se.umu.cs.emli.MyUnitTester.Controller" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Unittester" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="se.umu.cs.emli.MyUnitTester.MyUnitTester" />
+      <module name="MyUnitTester" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -236,7 +247,13 @@
       <option name="presentableId" value="LOCAL−00028" />
       <updated>1668689009715</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL−00029" summary="Added report.">
+      <created>1668691518909</created>
+      <option name="number" value="LOCAL−00029" />
+      <option name="presentableId" value="LOCAL−00029" />
+      <updated>1668691518909</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -251,7 +268,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="GUI updated, now using scrollview." />
     <MESSAGE value="Created Controller. &#10;Updated program to follow MVC in a better way." />
     <MESSAGE value="Set listener on both buttons. &#10;To run tests not yet implemented, needs to be on its own thread." />
     <MESSAGE value="Made a swingworker for handling running tests. Not done yet." />
@@ -276,6 +292,7 @@
     <MESSAGE value="Inserted linewrap on textarea." />
     <MESSAGE value="Fixed gui to make sure only one testclass can be run at a time." />
     <MESSAGE value="Added jar-file and manifestfile." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added jar-file and manifestfile." />
+    <MESSAGE value="Added report." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added report." />
   </component>
 </project>

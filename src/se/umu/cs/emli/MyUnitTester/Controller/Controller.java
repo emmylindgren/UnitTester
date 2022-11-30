@@ -10,9 +10,8 @@ public class Controller {
      * Init the controller. Sets up the graphical user interface, and it's listeners.
      */
     public Controller(){
-        this.view = new UnitTestView("Unit tester");
+        this.view = new UnitTestView("Unittester");
         setUpListeners();
-
         view.show();
     }
 
@@ -29,15 +28,18 @@ public class Controller {
     private void handleInput(){
         String input = this.view.getInputValue();
         view.clearOutPut();
+        view.disableRunButton();
         try {
             ClassHolder holder = new ClassHolder(input);
             TestWorker worker = new TestWorker(view,holder);
             worker.execute();
         } catch (ClassNotFoundException | NoClassDefFoundError e) {
             view.updateOutPut("No class with that name found.");
+            view.enableRunButton();
         } catch (NoSuchMethodException e) {
             view.updateOutPut("Invalid class. "+ input
                     +" had no constructor or had constructor with parameters.");
+            view.enableRunButton();
         }
     }
 }

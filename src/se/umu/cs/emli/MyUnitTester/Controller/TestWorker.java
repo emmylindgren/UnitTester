@@ -36,7 +36,9 @@ public class TestWorker extends SwingWorker<String,String>{
     @Override
     protected String doInBackground(){
 
-        view.disableRunButton();
+        // while, has teststorun? så runnext test hahaha !!
+        //Få tillbaka en sträng som publiceras.
+        // Sen köra get() för att hämta totalsträngen.
         if(classHolder.isValid()){
             List<String> testMethods = classHolder.getTestMethodNames();
 
@@ -61,9 +63,8 @@ public class TestWorker extends SwingWorker<String,String>{
                 } catch (IllegalAccessException e) {
                     publish("Class does not give permission to run method: "+method);
                 }
-                finally {
-                    invokeSetUpTearDown("tearDown");
-                }
+
+                invokeSetUpTearDown("tearDown");
             }
         }
         else{
