@@ -1,8 +1,9 @@
-package se.umu.cs.emli.MyUnitTester.Model;
+package se.umu.cs.emli.MyUnitTester.Tests;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import se.umu.cs.emli.MyUnitTester.Model.ResultHolder;
 
 import static org.junit.jupiter.api.Assertions.*;
 /**
