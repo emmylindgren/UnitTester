@@ -4,7 +4,8 @@ import se.umu.cs.unittest.TestClass;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.ArrayList;
+import java.util.Stack;
+
 /**
  * Class to hold info about test-classes.
  * @author Emmy Lindgren, id19eln
@@ -17,8 +18,7 @@ public class ClassHolder {
     private Method tearDown;
     private final String className;
     private String invalidReason;
-
-    private ArrayList<Method> testMethods;
+    private Stack<Method> testMethods;
     private final ResultHolder resultHolder;
 
     public ClassHolder(String className) throws NoSuchMethodException, NoClassDefFoundError, ClassNotFoundException {
@@ -33,7 +33,7 @@ public class ClassHolder {
         }
         c = c1;
         con = c.getConstructor();
-        getTestMethodNames();
+        getTestMethods();
         resultHolder = new ResultHolder();
     }
 
@@ -71,7 +71,7 @@ public class ClassHolder {
      * If setUp and tearDown exist then they are also saved in the model,
      * if not they are saved as null.
      */
-    private void getTestMethodNames(){
+    private void getTestMethods(){
         try {
             setUp = c.getMethod("setUp");
         } catch (NoSuchMethodException e) {
@@ -84,12 +84,12 @@ public class ClassHolder {
         }
 
         Method[] methods = c.getMethods();
-        testMethods = new ArrayList<>();
+        testMethods = new Stack<>();
         for (Method method: methods) {
             if(method.getName().startsWith("test") &&
                     method.getReturnType().getName().equals("boolean") &&
                     method.getParameterCount() == 0){
-                testMethods.add(method);
+                testMethods.push(method);
             }
         }
     }
@@ -116,13 +116,22 @@ public class ClassHolder {
         }
     }
 
+    /**
+     * Checks if there are any testmethods to run.
+     * @return boolean, saying if there are any testmethods to run.
+     */
     public boolean hasTestMethodsToRun(){
         return !testMethods.isEmpty();
     }
 
+    /**
+     * Method to run test method next in line from testmethod-stack.
+     * Invokes setUp then runs testmethod. The result is added to resultholder and
+     * tearDown is invoked. Then the result is returned in form of a string.
+     * @return the result, in form of a string.
+     */
     public String runNextTestMethod() {
-        Method method = testMethods.get(0);
-        testMethods.remove(method);
+        Method method = testMethods.pop();
         String result = "";
         try {
             result += invokeSetUpTearDown("setUp");
@@ -144,6 +153,11 @@ public class ClassHolder {
         }
         return result;
     }
+
+    /**
+     * Returns the final string of all results.
+     * @return string with final results.
+     */
     public String getResults(){
         return resultHolder.getResultText();
     }

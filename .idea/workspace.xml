@@ -6,7 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Moved logic to model.">
+    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Clean up.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ClassHolder.java" afterDir="false" />
     </list>
@@ -281,7 +281,13 @@
       <option name="presentableId" value="LOCAL−00033" />
       <updated>1669836174291</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL−00034" summary="Clean up.">
+      <created>1669836362693</created>
+      <option name="number" value="LOCAL−00034" />
+      <option name="presentableId" value="LOCAL−00034" />
+      <updated>1669836362693</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -296,7 +302,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Updated the view to have some padding for text." />
     <MESSAGE value="Added some functionality to worker." />
     <MESSAGE value="Updated resultholder to only hold nr of fails and success, not the reason of more than exception." />
     <MESSAGE value="Updated resultholder to build the result-text for the program." />
@@ -321,6 +326,7 @@
     <MESSAGE value="Fixed some things from feedback. Need to fix some more things." />
     <MESSAGE value="Added author-tags." />
     <MESSAGE value="Moved logic to model." />
-    <option name="LAST_COMMIT_MESSAGE" value="Moved logic to model." />
+    <MESSAGE value="Clean up." />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean up." />
   </component>
 </project>
