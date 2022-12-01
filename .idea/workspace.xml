@@ -6,8 +6,13 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Added author-tags.">
-      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/View/UnitTestView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/View/UnitTestView.java" afterDir="false" />
+    <list default="true" id="b4e0d67f-3306-4f76-bc1d-befc430a9e24" name="Changes" comment="Added Junittests for models.">
+      <change afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ResultHolderTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/TestWithoutMethods.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Tests/ClassHolderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MyUnitTester.iml" beforeDir="false" afterPath="$PROJECT_DIR$/MyUnitTester.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ResultHolder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/se/umu/cs/emli/MyUnitTester/Model/ResultHolder.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +24,16 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -39,27 +50,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Emmy/IdeaProjects/MyUnitTester/src/se/umu/cs/emli/MyUnitTester&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "create.test.in.the.same.root": "true",
+    "last_opened_file_path": "C:/Users/Emmy/IdeaProjects/MyUnitTester/src/se/umu/cs/emli/MyUnitTester",
+    "project.structure.last.edited": "Artifacts",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Emmy\IdeaProjects\MyUnitTester\src\se\umu\cs\emli\MyUnitTester" />
       <recent name="C:\Users\Emmy\IdeaProjects\MyUnitTester\out\artifacts\MyUnitTester_jar" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="se.umu.cs.emli.MyUnitTester.Controller" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="se.umu.cs.emli.MyUnitTester.Model" />
+      <recent name="se.umu.cs.emli.MyUnitTester.Tests" />
+    </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.ClassHolderTest">
     <configuration name="Unittester" type="Application" factoryName="Application">
       <option name="MAIN_CLASS_NAME" value="se.umu.cs.emli.MyUnitTester.MyUnitTester" />
       <module name="MyUnitTester" />
@@ -67,6 +92,93 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ClassHolderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyUnitTester" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="se.umu.cs.emli.MyUnitTester.Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="se.umu.cs.emli.MyUnitTester.Tests" />
+      <option name="MAIN_CLASS_NAME" value="se.umu.cs.emli.MyUnitTester.Tests.ClassHolderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResultHolderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyUnitTester" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="se.umu.cs.emli.MyUnitTester.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="se.umu.cs.emli.MyUnitTester.Model" />
+      <option name="MAIN_CLASS_NAME" value="se.umu.cs.emli.MyUnitTester.Model.ResultHolderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResultHolderTest.addingExceptionFailedAndPassedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyUnitTester" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="se.umu.cs.emli.MyUnitTester.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="se.umu.cs.emli.MyUnitTester.Model" />
+      <option name="MAIN_CLASS_NAME" value="se.umu.cs.emli.MyUnitTester.Model.ResultHolderTest" />
+      <option name="METHOD_NAME" value="addingExceptionFailedAndPassedTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResultHolderTest.addingPassedTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyUnitTester" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="se.umu.cs.emli.MyUnitTester.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="se.umu.cs.emli.MyUnitTester.Model" />
+      <option name="MAIN_CLASS_NAME" value="se.umu.cs.emli.MyUnitTester.Model.ResultHolderTest" />
+      <option name="METHOD_NAME" value="addingPassedTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ResultHolderTest.getResultStringWhenNoResults" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="MyUnitTester" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="se.umu.cs.emli.MyUnitTester.Model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="se.umu.cs.emli.MyUnitTester.Model" />
+      <option name="MAIN_CLASS_NAME" value="se.umu.cs.emli.MyUnitTester.Model.ResultHolderTest" />
+      <option name="METHOD_NAME" value="getResultStringWhenNoResults" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.ClassHolderTest" />
+        <item itemvalue="JUnit.ResultHolderTest" />
+        <item itemvalue="JUnit.ResultHolderTest.getResultStringWhenNoResults" />
+        <item itemvalue="JUnit.ResultHolderTest.addingExceptionFailedAndPassedTest" />
+        <item itemvalue="JUnit.ResultHolderTest.addingPassedTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -263,7 +375,31 @@
       <option name="presentableId" value="LOCAL−00031" />
       <updated>1669823160629</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL−00032" summary="Added author-tags.">
+      <created>1669823204070</created>
+      <option name="number" value="LOCAL−00032" />
+      <option name="presentableId" value="LOCAL−00032" />
+      <updated>1669823204070</updated>
+    </task>
+    <task id="LOCAL−00033" summary="Moved logic to model.">
+      <created>1669836174291</created>
+      <option name="number" value="LOCAL−00033" />
+      <option name="presentableId" value="LOCAL−00033" />
+      <updated>1669836174291</updated>
+    </task>
+    <task id="LOCAL−00034" summary="Clean up.">
+      <created>1669836362693</created>
+      <option name="number" value="LOCAL−00034" />
+      <option name="presentableId" value="LOCAL−00034" />
+      <updated>1669836362693</updated>
+    </task>
+    <task id="LOCAL−00035" summary="Cleaned up and comments.">
+      <created>1669893803877</created>
+      <option name="number" value="LOCAL−00035" />
+      <option name="presentableId" value="LOCAL−00035" />
+      <updated>1669893803877</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -278,10 +414,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Made a swingworker for handling running tests. Not done yet." />
-    <MESSAGE value="Updated the view to have some padding for text." />
-    <MESSAGE value="Added some functionality to worker." />
-    <MESSAGE value="Updated resultholder to only hold nr of fails and success, not the reason of more than exception." />
     <MESSAGE value="Updated resultholder to build the result-text for the program." />
     <MESSAGE value="Clearing output-area before starting a test." />
     <MESSAGE value="Cleaned up code." />
@@ -303,6 +435,10 @@
     <MESSAGE value="Added report." />
     <MESSAGE value="Fixed some things from feedback. Need to fix some more things." />
     <MESSAGE value="Added author-tags." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added author-tags." />
+    <MESSAGE value="Moved logic to model." />
+    <MESSAGE value="Clean up." />
+    <MESSAGE value="Cleaned up and comments." />
+    <MESSAGE value="Added Junittests for models." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Junittests for models." />
   </component>
 </project>

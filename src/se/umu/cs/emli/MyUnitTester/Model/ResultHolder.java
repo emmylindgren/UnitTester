@@ -40,7 +40,7 @@ public class ResultHolder {
             builder.append(nrOfSuccess).append(" tests succeeded.").append(System.lineSeparator());
         }
         if(nrOfFail != 0){builder.append(nrOfFail).append(" tests failed.").append(System.lineSeparator());}
-        if(nrOfExceptions != 0){builder.append(nrOfExceptions).append(" tests failed because of exceptions");}
+        if(nrOfExceptions != 0){builder.append(nrOfExceptions).append(" tests failed because of exceptions.");}
 
         return builder.toString();
     }
